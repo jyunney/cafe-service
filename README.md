@@ -49,7 +49,8 @@
 
   ### 10. Persistence Volume/ConfigMap/Secret
   1. EFS 생성
- 
+ ![image](https://user-images.githubusercontent.com/117131418/209910291-f4870d6f-f96a-485b-882f-5ae6a088ddf6.png)
+
   ### 11. Self-healing (liveness probe)
   
   ### 12. Loggregation / Monitoring
