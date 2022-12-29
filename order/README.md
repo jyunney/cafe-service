@@ -1,5 +1,4 @@
 # order
-#cafe service
 
 ## Running in local development environment
 
