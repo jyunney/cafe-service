@@ -14,3 +14,35 @@
     장애간섭최소화
 
     Loosely coupled architecture
+  ### 2. CQRS
+    읽기 데이터 분리
+
+    두개 이상의 다른 마이크로서비스의 데이터를 Projection(Join)하는 대시보드
+  ### 3. Compensation / Correlation
+    복구/취소
+
+    해당 취소 건에 대한 필터링
+  ### 4. Request / Response
+    값을 참고(GET)
+
+    order -> 주문이력을 조회
+  ### 5. Circuit Breaker
+    Istio 를 사용 경우 (Timeout)
+
+    스프링클라우드 - Hystrix
+  ### 6. GateWay / Ingress
+    JWT 인증
+
+  ### 7. Deploy / Pipeline
+    Public 주소로 접속
+
+    CI/CD 로 적용
+  ### 8. Autoscale (HPA)
+
+  ### 9. Zero-downtime deploy (Readiness probe)
+
+  ### 10. Persistence Volume/ConfigMap/Secret
+ 
+  ### 11. Self-healing (liveness probe)
+  
+
