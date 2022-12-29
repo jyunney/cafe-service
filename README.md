@@ -1,5 +1,5 @@
 # cafe-service
-
+![image](https://user-images.githubusercontent.com/117132858/209910638-ecf12a62-f5e0-49c1-af03-21c9c5069764.png)
 > 고객이 어플을 통한 카페 메뉴를 주문하는 서비스입니다.
 * * *
 ## 서비스 시나리오
