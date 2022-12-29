@@ -32,7 +32,7 @@ public class OrderListViewHandler {
             orderList.setMenuId(orderPlaced.getMenuId());
             orderList.setQty(orderPlaced.getQty());
             orderList.setTotalPrice(orderPlaced.getTotalPrice());
-            orderList.setStatus(orderPlaced);
+            orderList.setStatus("orderPlaced");
             orderList.setOrderDate(orderPlaced.getOrderDate());
             // view 레파지 토리에 save
             orderListRepository.save(orderList);
@@ -53,7 +53,7 @@ public class OrderListViewHandler {
             if( orderListOptional.isPresent()) {
                  OrderList orderList = orderListOptional.get();
             // view 객체에 이벤트의 eventDirectValue 를 set 함
-                orderList.setStatus(canceled);    
+                orderList.setStatus("canceled");
                 // view 레파지 토리에 save
                  orderListRepository.save(orderList);
                 }
@@ -68,12 +68,12 @@ public class OrderListViewHandler {
         try {
             if (!orderCanceled.validate()) return;
                 // view 객체 조회
-            Optional<OrderList> orderListOptional = orderListRepository.findById(orderCanceled.getId());
+            Optional<OrderList> orderListOptional = orderListRepository.findById(orderCanceled.getOrderId());
 
             if( orderListOptional.isPresent()) {
                  OrderList orderList = orderListOptional.get();
             // view 객체에 이벤트의 eventDirectValue 를 set 함
-                orderList.setStatus(canceled);    
+                orderList.setStatus("canceled");    
                 // view 레파지 토리에 save
                  orderListRepository.save(orderList);
                 }
@@ -93,7 +93,7 @@ public class OrderListViewHandler {
             if( orderListOptional.isPresent()) {
                  OrderList orderList = orderListOptional.get();
             // view 객체에 이벤트의 eventDirectValue 를 set 함
-                orderList.setStatus(approved);    
+                orderList.setStatus("approved");    
                 // view 레파지 토리에 save
                  orderListRepository.save(orderList);
                 }
@@ -108,12 +108,12 @@ public class OrderListViewHandler {
         try {
             if (!makeStarted.validate()) return;
                 // view 객체 조회
-            Optional<OrderList> orderListOptional = orderListRepository.findById(makeStarted.getId());
+            Optional<OrderList> orderListOptional = orderListRepository.findById(makeStarted.getOrderId());
 
             if( orderListOptional.isPresent()) {
                  OrderList orderList = orderListOptional.get();
             // view 객체에 이벤트의 eventDirectValue 를 set 함
-                orderList.setStatus(makeStarted);    
+                orderList.setStatus("makeStarted");    
                 // view 레파지 토리에 save
                  orderListRepository.save(orderList);
                 }
@@ -128,12 +128,12 @@ public class OrderListViewHandler {
         try {
             if (!makeCompleted.validate()) return;
                 // view 객체 조회
-            Optional<OrderList> orderListOptional = orderListRepository.findById(makeCompleted.getId());
+            Optional<OrderList> orderListOptional = orderListRepository.findById(makeCompleted.getOrderId());
 
             if( orderListOptional.isPresent()) {
                  OrderList orderList = orderListOptional.get();
             // view 객체에 이벤트의 eventDirectValue 를 set 함
-                orderList.setStatus(makeCompleted);    
+                orderList.setStatus("makeCompleted");    
                 // view 레파지 토리에 save
                  orderListRepository.save(orderList);
                 }
@@ -153,7 +153,7 @@ public class OrderListViewHandler {
             if( orderListOptional.isPresent()) {
                  OrderList orderList = orderListOptional.get();
             // view 객체에 이벤트의 eventDirectValue 를 set 함
-                orderList.setStatus(paid);    
+                orderList.setStatus("paid");    
                 // view 레파지 토리에 save
                  orderListRepository.save(orderList);
                 }
@@ -173,7 +173,7 @@ public class OrderListViewHandler {
             if( orderListOptional.isPresent()) {
                  OrderList orderList = orderListOptional.get();
             // view 객체에 이벤트의 eventDirectValue 를 set 함
-                orderList.setStatus(paymentCanceled);    
+                orderList.setStatus("paymentCanceled");    
                 // view 레파지 토리에 save
                  orderListRepository.save(orderList);
                 }

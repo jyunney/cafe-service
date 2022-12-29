@@ -14,57 +14,21 @@ import java.util.Date;
 @Data
 
 public class Order  {
-
-
-    
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
-    
-    
-    
-    
-    
     private Long orderId;
-    
-    
-    
-    
     
     private Long customerId;
     
-    
-    
-    
-    
     private Long cafeId;
-    
-    
-    
-    
     
     private Long menuId;
     
-    
-    
-    
-    
     private Integer qty;
-    
-    
-    
-    
     
     private Long totalPrice;
     
-    
-    
-    
-    
     private String status;
-    
-    
-    
-    
     
     private Date orderDate;
 
@@ -80,7 +44,6 @@ public class Order  {
         OrderApplication.applicationContext.getBean(cafe.service.external.PaymentService.class)
             .startPayment(payment);
 
-
         OrderPlaced orderPlaced = new OrderPlaced(this);
         orderPlaced.publishAfterCommit();
 
@@ -92,9 +55,6 @@ public class Order  {
         CustomerOrderCanceled customerOrderCanceled = new CustomerOrderCanceled(this);
         customerOrderCanceled.publishAfterCommit();
 
-    }
-    @PreRemove
-    public void onPreRemove(){
     }
 
     public static OrderRepository repository(){
