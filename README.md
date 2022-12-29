@@ -48,7 +48,7 @@
   ### 9. Zero-downtime deploy (Readiness probe)
 
   ### 10. Persistence Volume/ConfigMap/Secret
-     EFS 
+  1. EFS 생성
  
   ### 11. Self-healing (liveness probe)
   
