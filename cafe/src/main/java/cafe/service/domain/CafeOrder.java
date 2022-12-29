@@ -97,15 +97,11 @@ public class CafeOrder {
 
         /**
          * Example 2: finding and process
-         * 
-         * repository().findById(paymentCanceled.get???()).ifPresent(cafeOrder->{
-         * 
-         * cafeOrder // do something
-         * repository().save(cafeOrder);
-         * 
-         * 
-         * });
          */
+        repository().findById(paymentCanceled.getOrderId()).ifPresent(cafeOrder -> {
+            cafeOrder.setStatus("paymentCanceled"); // do something
+            repository().save(cafeOrder);
+        });
 
     }
 
