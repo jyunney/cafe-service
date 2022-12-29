@@ -34,11 +34,11 @@ public class Order  {
 
     @PostPersist
     public void onPostPersist(){
+        OrderPlaced orderPlaced = new OrderPlaced(this);
+        orderPlaced.publishAfterCommit();
 
         //Following code causes dependency to external APIs
         // it is NOT A GOOD PRACTICE. instead, Event-Policy mapping is recommended.
-
-
         cafe.service.external.Payment payment = new cafe.service.external.Payment();
         // mappings goes here
         payment.setOrderId(getOrderId());
@@ -47,13 +47,11 @@ public class Order  {
         payment.setMenuId(getMenuId());
         payment.setQty(getQty());
         payment.setTotalPrice(getTotalPrice());
+        payment.setStatus("paid");
         payment.setOrderDate(getOrderDate());
 
         OrderApplication.applicationContext.getBean(cafe.service.external.PaymentService.class)
             .startPayment(payment);
-
-        OrderPlaced orderPlaced = new OrderPlaced(this);
-        orderPlaced.publishAfterCommit();
 
     }
     @PreUpdate

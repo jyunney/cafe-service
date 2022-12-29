@@ -31,6 +31,8 @@ public class Payment  {
     private Date orderDate;
     
     private Long approvalCode;
+
+    private String status;
     
     private Long orderId;
 
