@@ -63,7 +63,11 @@
    ![image](https://user-images.githubusercontent.com/117131418/209910889-a4f54560-8f3e-4ae4-bbe9-16467f871a0f.png)
   
   6. order pod 적용
-  7. A pod에서 마운트된 경로에 파일을 생성하고 B pod에서 파일을 확인함
+  7. A pod에서 마운트된 경로에 파일을 생성하고 B pod에서 파일을 확인함(airbnb 예시)
+
+   ![image](https://user-images.githubusercontent.com/117131418/209911943-703550ce-85a3-47ed-8798-67fb6945fb80.png)
+   
+   ![image](https://user-images.githubusercontent.com/117131418/209911954-adbea56d-9f9b-42ca-866b-0589bc047f0b.png)
 
 
 
