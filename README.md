@@ -49,13 +49,19 @@
 
   ### 10. Persistence Volume/ConfigMap/Secret
   1. EFS 생성
+  
   ![image](https://user-images.githubusercontent.com/117131418/209910291-f4870d6f-f96a-485b-882f-5ae6a088ddf6.png)
+  
   2. EFS 계정 생성 및 ROLE 바인딩 : efs-sa.yml, efs-rbac.yml
   3. EFSS Provisioner 배포 : efs-provisioner.yml
   4. 설치한 Provisioner를 storageclass에 등록 : efs-storageclass.yml
+   
   ![image](https://user-images.githubusercontent.com/117131418/209910812-03ddc627-accf-4ba3-b88e-ba1ce918562f.png)
+  
   5. PVC(PersistentVolumeClaim) 생성 : volume-pvc.yml  -> 여기까지 진행, PVC 상태 계속 
+   
   ![image](https://user-images.githubusercontent.com/117131418/209910889-a4f54560-8f3e-4ae4-bbe9-16467f871a0f.png)
+  
   6. order pod 적용
   7. A pod에서 마운트된 경로에 파일을 생성하고 B pod에서 파일을 확인함
 
