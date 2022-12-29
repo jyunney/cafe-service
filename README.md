@@ -12,5 +12,6 @@
 ## 체크 포인트
   ### 1. Saga (Pub / Sub)
     장애간섭최소화
-  
+  ![image](https://user-images.githubusercontent.com/117132858/209895807-4815dea3-a153-496b-9e7b-4248b196548b.png)
+
     Loosely coupled architecture
