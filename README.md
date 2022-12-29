@@ -44,6 +44,11 @@
 
     CI/CD 로 적용
   ### 8. Autoscale (HPA)
+- cpu 할당 : cafe:200m, order:300m, payment:500m
+- order/cafe/payment service의 cpu 사용률이 30/20/50% 초과시 replica를 2개로 늘려준다.
+<img width="357" alt="image" src="https://user-images.githubusercontent.com/117134765/209917249-664ca4c9-51fa-4784-8d06-bec82aaae579.png">
+-
+
 
   ### 9. Zero-downtime deploy (Readiness probe)
 
