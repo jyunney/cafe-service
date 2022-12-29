@@ -1,12 +1,18 @@
 package cafe.service.domain;
 
-import cafe.service.domain.Paid;
-import cafe.service.domain.PaymentCanceled;
-import cafe.service.PaymentApplication;
-import javax.persistence.*;
-import java.util.List;
-import lombok.Data;
 import java.util.Date;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.PostPersist;
+import javax.persistence.PreUpdate;
+import javax.persistence.Table;
+
+import cafe.service.PaymentApplication;
+import cafe.service.external.PGDemo;
+import lombok.Data;
 
 
 @Entity
@@ -38,6 +44,7 @@ public class Payment  {
 
     @PostPersist
     public void onPostPersist(){
+        pg().startTransaction();
         Paid paid = new Paid(this);
         paid.publishAfterCommit();
 
@@ -54,6 +61,11 @@ public class Payment  {
     public static PaymentRepository repository(){
         PaymentRepository paymentRepository = PaymentApplication.applicationContext.getBean(PaymentRepository.class);
         return paymentRepository;
+    }
+
+    public static PGDemo pg(){
+        PGDemo pg = PaymentApplication.applicationContext.getBean(PGDemo.class);
+        return pg;
     }
 
 

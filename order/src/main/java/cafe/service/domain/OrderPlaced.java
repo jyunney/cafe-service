@@ -1,9 +1,10 @@
 package cafe.service.domain;
 
-import cafe.service.domain.*;
+import java.util.Date;
+
 import cafe.service.infra.AbstractEvent;
-import java.util.*;
-import lombok.*;
+import lombok.Data;
+import lombok.ToString;
 
 
 @Data
