@@ -44,6 +44,8 @@
 
     CI/CD 로 적용
   ### 8. Autoscale (HPA)
+  <img width="357" alt="image" src="https://user-images.githubusercontent.com/117134765/209917039-79968a59-0940-40b3-8d8c-d6fd502bfc30.png">
+
 
   ### 9. Zero-downtime deploy (Readiness probe)
 
