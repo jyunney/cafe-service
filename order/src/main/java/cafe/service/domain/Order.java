@@ -1,12 +1,17 @@
 package cafe.service.domain;
 
-import cafe.service.domain.OrderPlaced;
-import cafe.service.domain.CustomerOrderCanceled;
-import cafe.service.OrderApplication;
-import javax.persistence.*;
-import java.util.List;
-import lombok.Data;
 import java.util.Date;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.PostPersist;
+import javax.persistence.PreUpdate;
+import javax.persistence.Table;
+
+import cafe.service.OrderApplication;
+import lombok.Data;
 
 
 @Entity
@@ -35,7 +40,7 @@ public class Order  {
     @PostPersist
     public void onPostPersist(){
         OrderPlaced orderPlaced = new OrderPlaced(this);
-        orderPlaced.publishAfterCommit();
+        orderPlaced.publish();
 
         //Following code causes dependency to external APIs
         // it is NOT A GOOD PRACTICE. instead, Event-Policy mapping is recommended.
