@@ -11,6 +11,9 @@
 * * *
 ## Event Storming 결과
 
+> 모델 완성
+![image](https://user-images.githubusercontent.com/117132858/209902910-3f06a6c1-94d5-4289-b4ef-c18bf06d2ad8.png)
+
 * * *
 ## 구현
   ### 1. Saga (Pub-Sub)
