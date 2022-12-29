@@ -41,6 +41,14 @@ public class Order  {
 
         cafe.service.external.Payment payment = new cafe.service.external.Payment();
         // mappings goes here
+        payment.setOrderId(getOrderId());
+        payment.setCustomerId(getCustomerId());
+        payment.setCafeId(getCafeId());
+        payment.setMenuId(getMenuId());
+        payment.setQty(getQty());
+        payment.setTotalPrice(getTotalPrice());
+        payment.setOrderDate(getOrderDate());
+
         OrderApplication.applicationContext.getBean(cafe.service.external.PaymentService.class)
             .startPayment(payment);
 

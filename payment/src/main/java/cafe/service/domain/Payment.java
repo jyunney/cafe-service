@@ -14,70 +14,28 @@ import java.util.Date;
 @Data
 
 public class Payment  {
-
-
-    
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
-    
-    
-    
-    
-    
     private Long paymentId;
-    
-    
-    
-    
     
     private Long customerId;
     
-    
-    
-    
-    
     private Long cafeId;
-    
-    
-    
-    
     
     private Long menuId;
     
-    
-    
-    
-    
     private Integer qty;
-    
-    
-    
-    
     
     private Long totalPrice;
     
-    
-    
-    
-    
     private Date orderDate;
     
-    
-    
-    
-    
     private Long approvalCode;
-    
-    
-    
-    
     
     private Long orderId;
 
     @PostPersist
     public void onPostPersist(){
-
-
         Paid paid = new Paid(this);
         paid.publishAfterCommit();
 
