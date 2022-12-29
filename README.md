@@ -13,7 +13,7 @@
 
 * * *
 ## 구현
-  ### 1. Saga (Pub / Sub)
+  ### 1. Saga (Pub-Sub)
     장애간섭최소화
 
     Loosely coupled architecture
@@ -25,7 +25,7 @@
     복구/취소
 
     해당 취소 건에 대한 필터링
-  ### 4. Request / Response
+  ### 4. Request-Response
     값을 참고(GET)
 
     order -> 주문이력을 조회
@@ -47,5 +47,8 @@
   ### 10. Persistence Volume/ConfigMap/Secret
  
   ### 11. Self-healing (liveness probe)
+  
+  ### 12. Loggregation / Monitoring
+  
   
 
