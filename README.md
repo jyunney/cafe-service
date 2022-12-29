@@ -12,7 +12,7 @@
 ## Event Storming 결과
 
 > 모델 완성
-![image](https://user-images.githubusercontent.com/117132858/209902910-3f06a6c1-94d5-4289-b4ef-c18bf06d2ad8.png)
+![image](https://user-images.githubusercontent.com/15317158/209916428-b615afe8-a3c0-4016-b934-a3f0b832d13d.png)
 
 * * *
 ## 구현
