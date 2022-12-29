@@ -50,17 +50,17 @@
   ### 10. Persistence Volume/ConfigMap/Secret
   1. EFS 생성
   
-    ![image](https://user-images.githubusercontent.com/117131418/209910291-f4870d6f-f96a-485b-882f-5ae6a088ddf6.png)
+   ![image](https://user-images.githubusercontent.com/117131418/209910291-f4870d6f-f96a-485b-882f-5ae6a088ddf6.png)
   
   2. EFS 계정 생성 및 ROLE 바인딩 : efs-sa.yml, efs-rbac.yml
   3. EFSS Provisioner 배포 : efs-provisioner.yml
   4. 설치한 Provisioner를 storageclass에 등록 : efs-storageclass.yml
    
-    ![image](https://user-images.githubusercontent.com/117131418/209910812-03ddc627-accf-4ba3-b88e-ba1ce918562f.png)
+   ![image](https://user-images.githubusercontent.com/117131418/209910812-03ddc627-accf-4ba3-b88e-ba1ce918562f.png)
   
   5. PVC(PersistentVolumeClaim) 생성 : volume-pvc.yml  -> 여기까지 진행, PVC 상태 계속 
    
-    ![image](https://user-images.githubusercontent.com/117131418/209910889-a4f54560-8f3e-4ae4-bbe9-16467f871a0f.png)
+   ![image](https://user-images.githubusercontent.com/117131418/209910889-a4f54560-8f3e-4ae4-bbe9-16467f871a0f.png)
   
   6. order pod 적용
   7. A pod에서 마운트된 경로에 파일을 생성하고 B pod에서 파일을 확인함
@@ -74,14 +74,14 @@
     90초 후 삭제
     livenessProbe에 'cat /tmp/healthy'으로 검증하도록 함
       
-    ![image](https://user-images.githubusercontent.com/117131418/209911192-ddd4d65c-f80c-4217-9e05-a280359e9981.png)
+   ![image](https://user-images.githubusercontent.com/117131418/209911192-ddd4d65c-f80c-4217-9e05-a280359e9981.png)
      
    2. kubectl describe pod order 실행으로 확인
     컨테이너 실행 후 90초 동인은 정상이나 이후 /tmp/healthy 파일이 삭제되어 livenessProbe에서 실패를 리턴하게 됨
     pod 정상 상태 일때 pod 진입하여 /tmp/healthy 파일 생성해주면 정상 상태 유지됨
     >> 배포 후 테스트해서 캡쳐(아래는 airbnb 예시)
       
-    ![image](https://user-images.githubusercontent.com/117131418/209911538-9be624d4-4345-4a1d-96bd-148b8d8c0fe0.png)
+   ![image](https://user-images.githubusercontent.com/117131418/209911538-9be624d4-4345-4a1d-96bd-148b8d8c0fe0.png)
       
   ### 12. Loggregation / Monitoring
   
